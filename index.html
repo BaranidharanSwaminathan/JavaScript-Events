@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="heading-bg">
+            <h1>Onclick</h1>
+        </div>
+        <div class="clear"></div>
+        <h2  class="onclick" onclick="this.innerHTML='You clicked me!!'">Click me to change</h2><br>
+
+        <button class="date-time" onclick="displayDate()">I am your Clock</button>
+        <script>
+        
+        function displayDate() {
+        document.getElementById("DateTime").innerHTML = Date();
+        }
+        DateTime.style.padding = "10px";
+        DateTime.style.fontSize= "20px";
+        </script> <br>
+        <p id="DateTime"></p>
+    </section><br><br><br>
+
+    <section>
+        <div class="heading-bg">
+            <h1>Onchange</h1>
+        </div>
+        <div class="clear"></div>
+        <h2>Hi my name is : </h2>
+        <input type="text" id="firstname" onchange="upperCase()">
+
+        <script>
+            function upperCase(){
+                const x = document.getElementById("firstname");
+                x.value = x.value.toUpperCase();
+            }
+            firstname.style.backgroundColor = "pink";
+            firstname.style.border = "2px solid deeppink";
+            firstname.style.padding = "10px";
+            firstname.style.borderRadius = "5px";
+        </script>
+    </section><br><br><br>
+
+    <section>
+        <div class="heading-bg">
+            <h1>Onmouseover and Onmouseout</h1>
+        </div>
+        <div class="clear"></div>
+        <h2 id="mouseover">Hover me to mouseover</h2>
+
+    </section>
+    <script>
+        var over = document.getElementById("mouseover");
+
+        over.onmouseover = function(){
+            over.innerHTML = "Thank You";
+            over.style.backgroundColor = "#ff67eb";
+            over.style.display = "inline-block";
+            over.style.width = "300px";
+            over.style.color = "black";
+        }
+
+        over.onmouseout = function(){
+            over.innerHTML = "Hover me to mouseover";
+            over.style.backgroundColor = "#ff6aeb";
+            over.style.display = "inline-block";
+            over.style.width = "300px";
+        }
+    </script><br><br><br>
+
+
+    <section>
+        <div class="heading-bg">
+            <h1>GetElement by Id </h1>
+        </div>
+        <div class="clear"></div>
+        <h2 id="idname">This is get element by ID</h2>
+        <p id = "demo"></p>
+
+        <script>
+            var elementId = document.getElementById("idname");
+            elementId.style.backgroundColor = "yellow";
+            elementId.style.fontSize = "20px";
+            elementId.style.display = "inline-block";
+            elementId.style.padding = "10px";
+        </script>
+    </section><br><br><br>
+
+    <section>
+        <div class="heading-bg">
+            <h1>GetElement by ClassName</h1>
+        </div>
+        <div class="clear"></div>
+        <h2 class="classname">This is get element by ClassName</h2>
+
+        <script>
+            var elementclass = document.getElementsByClassName("classname")[0];
+            elementclass.style.backgroundColor = "brown";
+            elementclass.style.fontSize = "20px";
+            elementclass.style.display = "inline-block";
+            elementclass.style.padding = "10px";
+            elementclass.style.color = "white";
+        </script>
+    </section><br><br><br>
+
+    <section>
+        <div class="heading-bg">
+            <h1>GetElement by TagName</h1>
+        </div>
+        <div class="clear"></div>
+        
+        <h3>This is get element by TagName</h3>
+
+        <script>
+            var elementtag = document.getElementsByTagName("h3")[0];
+            elementtag.style.backgroundColor = "grey";
+            elementtag.style.fontSize = "20px";
+            elementtag.style.display = "inline-block";
+            elementtag.style.padding = "10px";
+            elementtag.style.color = "white";
+        </script>
+    </section><br><br><br>
+
+
+    <section>
+        <div class="heading-bg">
+            <h1>GetElement by CSS Selectors</h1>
+        </div>
+        <div class="clear"></div>
+       
+        <h3 class="selectorname">This is get element by selectorName</h3>
+
+        <script>
+            var elementselect = document.querySelectorAll("h3.selectorname")[0];
+            elementselect.style.backgroundColor = "violet";
+            elementselect.style.fontSize = "20px";
+            elementselect.style.display = "inline-block";
+            elementselect.style.padding = "10px";
+            elementselect.style.color = "white";
+        </script>
+    </section>
+    <script>
+    // // Arrow Function
+
+    // //  const add = () => {
+    // //  console.log("This is function");
+    // //  };
+
+    // // add();  //output = This is function
+
+    // // const plus = () => {
+    // //     let sum = 1 + 2;
+    // //     console.log(sum);
+    // // }
+    // // plus();  //output = 3
+
+    // // const addition = (one , two) => {
+    // //     var values = one + two;
+    // //     console.log(values);
+    // // }
+
+    // // addition(20,30);  //output = 50
+    // // addition(1,1);  //output = 2
+
+    // // //Normal Function
+
+    // // function sum(one , two) {
+    // //     var values = one * two;
+    // //     console.log(values);
+    // // }
+
+    // // sum(2 , 5);
+    // // sum(10 , 5);
+
+
+    // // //Returning
+
+    // //  const sub = () => "hello world";
+    // // const result = sub();
+    // // console.log(result);
+
+
+    // // const div = (one , two) => {
+    // //     var value = one*two;
+    // //     return value;
+    // // }
+    // // div(20 , 40);
+    // // console.log(div(20 , 40));
+
+    // // //direct return
+    // // const div1 = (one,two) => one*two 
+    // // div1(20 , 40);
+    // // console.log(div1(20 , 40));
+
+    // // //if else
+
+    // // const a = 20>40;
+
+    // // if (a){
+    // //     console.log(true);
+    // // }
+
+    // // else{
+    // //     console.log(false);
+    // // }
+
+    // // const b = 20>40;
+
+    // // if (b){
+    // //     console.log(true);
+    // // }
+
+    // // else if (2<3){
+    // //     console.log("else if executed");
+    // // }
+
+
+    // // //Ternary operator
+
+    // // const t = 30<20;
+
+    // // const output = t ? "True" : "false";
+    // // console.log(output);
+
+    // // const d = 30<20;
+    // // let c = 20>10;
+
+    // // const output1 = t ? "True" ": c ? c is true" : "c is false";
+    // // console.log(output1);
+
+    // // //AND Operator....
+
+    // // let a1 = 20<40;
+    // // let r1 = a1 && "20 lessthan 40";
+    // // console.log(r1);
+
+    // // //OR Operator....
+
+    // // let a2 = 20>40;
+    // // let r2 = a2 || false || "or operator";
+    // // console.log(r2);
+
+    // // //NOT Operator....
+
+    // // let a3 = 2>1;
+    // // let r3 = !a3;
+    // // console.log(r3);
+
+    // // //Foreach loop....
+
+    // // var employee = ["Tamil" , "Barani" , "Sabari" , "Ahish"];
+
+    // // employee.forEach((name , index) =>{
+    // //     console.log("employee");
+    // //     console.log(name);
+    // // });
+
+    // // //map....
+
+    // // var employee1 = ["Tamil" , "Barani" , "Sabari" , "Ahish"];
+
+    // // var names = employee1.map((name , index) => {
+
+    // //     return(name);
+    // // });
+    // // console.log(names);
+
+    // // //for of 
+
+    // // var employee2 = ["Tamil" , "Barani" , "Sabari" , "Ahish"];
+
+    // // for (var name of employee2) {
+    // //     console.log(name);
+    // // }
+
+    // // //for in
+
+    // // const obj = {
+    // //     name : "Barani",
+    // //     Age : "22",
+    // //     city : "Tirupur"
+    // // };
+
+    // // for (const key in obj){
+    // //     console.log(key)
+    // // }
+
+    // // for (const key in obj){
+    // //     console.log(obj[key])
+    // // }
+
+
+
+    const t = {
+        Tamil : 100,
+        English : 100,
+        Maths : 100,
+        Science :100,
+        Social : 100
+    };
+    
+
+    const total = t.Tamil + t.English + t.Maths + t.Science + t.Social;
+
+    for(const key in t ){
+       mark =t[key];
+    }
+
+
+    if (total >= 450 && total <=500){
+        if (mark >= 35){
+            console.log("A-Grade");
+        }
+        else {
+            console.log("Fail");
+        }
+        
+    }
+        else if (total >=400  && total <=449){
+            if(mark>=35){
+                console.log("B-Grade");
+            }
+            else{
+                console.log("Fail");
+            }
+        }
+        else if (total >=350 && total <=399){
+            if(mark >= 35){
+                console.log("C-Grade");
+            }
+            else{
+                console.log("Fail");
+            }
+        }
+        else if (total >=300 && total <=349){
+            if(mark>=35){
+                console.log("D-Grade");
+            }
+            else{
+                console.log("Fail");
+            }
+        }
+        else if (total >=250 && total <=299){
+            if(mark>=35){
+                console.log("E-Grade");
+            }
+            else{
+                console.log("Fail");
+            }
+        }
+    else{
+        console.log("Fail");   
+    }
+    </script>
+   
+
+
+</body>
+</html>
